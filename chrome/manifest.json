@@ -1,0 +1,47 @@
+{
+  "name": "Minimal Bookface",
+  "short_name": "MinBookface",
+  "description": "Extends Bookface UI functionality by adding CSS to make the UI cleaner.",
+  "version": "2.72",
+  "manifest_version": 2,
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "applyOptions.js"
+      ],
+      "matches": [
+        "https://bookface.ycombinator.com/*"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "images/MinimalBookfaceIcon16.png",
+      "32": "images/MinimalBookfaceIcon32.png",
+      "48": "images/MinimalBookfaceIcon48.png",
+      "128": "images/MinimalBookfaceIcon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/MinimalBookfaceIcon16.png",
+    "32": "images/MinimalBookfaceIcon32.png",
+    "48": "images/MinimalBookfaceIcon48.png",
+    "128": "images/MinimalBookfaceIcon128.png"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+T",
+        "mac": "MacCtrl+Shift+T"
+      },
+      "description": "Opens Minimal Bookface"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}
