@@ -3,11 +3,14 @@ function save_options() {
   var topNavigation = document.getElementById("top-navigation").checked;
   var feedBorders = document.getElementById("feed-borders").checked;
   var noBorders = document.getElementById("borders").checked;
+  var noBanner = document.getElementById("no-banner").checked;
+
   chrome.storage.sync.set(
     {
       topNavigation: topNavigation,
       feedBorders: feedBorders,
       noBorders: noBorders,
+      noBanner: noBanner,
     },
     function () {
       // Update status to let user know options were saved.
@@ -28,11 +31,14 @@ function restore_options() {
       topNavigation: false,
       feedBorders: false,
       noBorders: false,
+      noBanner: false,
     },
     function (items) {
       document.getElementById("top-navigation").checked = items.topNavigation;
       document.getElementById("feed-borders").checked = items.feedBorders;
       document.getElementById("borders").checked = items.noBorders;
+      document.getElementById("no-banner").checked = items.noBanner;
+
     }
   );
 }
