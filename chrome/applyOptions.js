@@ -20,7 +20,9 @@ chrome.storage.sync.get(
     noBookmarksButton: false,
     noListsButton: false,
     noDirectMessageButton: false,
+    noBanner: false,
   },
+
   function (items) {
     if (items.topNavigation === true) {
       addStyles(`
@@ -42,6 +44,14 @@ chrome.storage.sync.get(
     if (items.noBorders === true) {
       addStyles(`
       div[class="recent-comments"] {
+        display: none;
+      }
+      `);
+    }
+
+    if (items.noBanner === true) {
+      addStyles(`
+      div[class="nag-div"] {
         display: none;
       }
       `);
