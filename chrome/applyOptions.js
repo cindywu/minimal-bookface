@@ -61,7 +61,7 @@ chrome.storage.sync.get(
     if (items.noPostRow === true) {
       addStyles(`
       div[class="new-post-row"] {
-        display: none;
+        display: none !important;
       }
       `);
     }
