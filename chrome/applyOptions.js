@@ -21,7 +21,7 @@ chrome.storage.sync.get(
     noListsButton: false,
     noDirectMessageButton: false,
     noBanner: false,
-    noNewPostRow: false,
+    noPostRow: false,
   },
 
   function (items) {
