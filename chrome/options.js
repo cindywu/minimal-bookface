@@ -4,13 +4,14 @@ function save_options() {
   var feedBorders = document.getElementById("feed-borders").checked;
   var noBorders = document.getElementById("borders").checked;
   var noBanner = document.getElementById("no-banner").checked;
-
+  var noNewPostRow = document.getElementById("no-post-row").checked;
   chrome.storage.sync.set(
     {
       topNavigation: topNavigation,
       feedBorders: feedBorders,
       noBorders: noBorders,
       noBanner: noBanner,
+      noNewPostRow: noNewPostRow,
     },
     function () {
       // Update status to let user know options were saved.
@@ -32,12 +33,13 @@ function restore_options() {
       feedBorders: false,
       noBorders: false,
       noBanner: false,
+      noNewPostRow: false,
     },
     function (items) {
       document.getElementById("top-navigation").checked = items.topNavigation;
       document.getElementById("feed-borders").checked = items.feedBorders;
       document.getElementById("borders").checked = items.noBorders;
-      document.getElementById("no-banner").checked = items.noBanner;
+      document.getElementById("no-post-row").checked = items.noNewPostRow;
 
     }
   );
