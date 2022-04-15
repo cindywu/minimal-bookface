@@ -4,7 +4,7 @@ function save_options() {
   var feedBorders = document.getElementById("feed-borders").checked;
   var noBorders = document.getElementById("borders").checked;
   var noBanner = document.getElementById("no-banner").checked;
-  var noNewPostRow = document.getElementById("no-post-row").checked;
+  var noNewPostRow = document.getElementById("new-post-row").checked;
   chrome.storage.sync.set(
     {
       topNavigation: topNavigation,
@@ -39,8 +39,7 @@ function restore_options() {
       document.getElementById("top-navigation").checked = items.topNavigation;
       document.getElementById("feed-borders").checked = items.feedBorders;
       document.getElementById("borders").checked = items.noBorders;
-      document.getElementById("no-post-row").checked = items.noNewPostRow;
-
+      document.getElementById("new-post-row").checked = items.noNewPostRow;
     }
   );
 }
