@@ -21,6 +21,7 @@ chrome.storage.sync.get(
     noListsButton: false,
     noDirectMessageButton: false,
     noBanner: false,
+    noNewPostRow: false,
   },
 
   function (items) {
@@ -52,6 +53,14 @@ chrome.storage.sync.get(
     if (items.noBanner === true) {
       addStyles(`
       div[class="nag-div"] {
+        display: none;
+      }
+      `);
+    }
+
+    if (items.noNewPostRow === true) {
+      addStyles(`
+      div[class="new-post-row"] {
         display: none;
       }
       `);
